@@ -1,7 +1,6 @@
 const form = document.getElementById('form-contato');
 const contatos = [];
 let linhas= '';
-let deleteContact = document.getElementById('contact');
 
 form.addEventListener('submit',function(e){
     e.preventDefault();
@@ -14,18 +13,15 @@ form.addEventListener('submit',function(e){
 function adcionaLinha(){
     const inputNomeContato = document.getElementById('nome-contato');
     const inputTelefoneContato = document.getElementById('telefone-contato');
-    contatos.push ((inputNomeContato.value[contatos]));
-;
-    let linha = `<tr${deleteContact}>`
+
+    let linha = `<tr>`;
     linha += `<td>${inputNomeContato.value}</td>`;
     linha += `<td>${inputTelefoneContato.value}</td>`;
-    linha += ` <td><button id="button-reset"  type="reset">x</button></td>`;
+    linha += `<td><button type="reset"  id="button-reset">X</button></td>`;
     linha += `</tr>`;
 
     linhas += linha;
-
-    
-
+        
     inputNomeContato.value = '';
     inputTelefoneContato.value = '';
 } 
